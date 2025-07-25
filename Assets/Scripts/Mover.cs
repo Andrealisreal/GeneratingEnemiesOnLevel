@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Mover : MonoBehaviour
@@ -8,16 +9,35 @@ public class Mover : MonoBehaviour
     
     private void Update()
     {
-        Move(_currentDirection);
+        Move();
     }
 
+    private void OnEnable()
+    {
+        StartCoroutine(Debuger());
+    }
+    
     public void SetDirection(Vector3 direction)
     {
         _currentDirection = direction;
+        Debug.Log($"Полученное направление: {direction}");
+        Debug.Log($"Текущие направление: {_currentDirection}");
     }
     
-    private void Move(Vector3 direction)
+    private void Move()
     {
-        transform.position += _speed * Time.deltaTime * direction;
+        transform.position += _speed * Time.deltaTime * _currentDirection;
+    }
+
+    private IEnumerator Debuger()
+    {
+        Debug.Log("Корутина запустилась");
+        
+        while (enabled)
+        {
+            yield return new WaitForSeconds(1f);
+            
+            Debug.Log($"Направление в работе: {_currentDirection}");
+        }
     }
 }
