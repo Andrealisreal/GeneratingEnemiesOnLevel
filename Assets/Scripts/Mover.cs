@@ -16,6 +16,11 @@ public class Mover : MonoBehaviour
     {
         StartCoroutine(Debuger());
     }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
     
     public void SetDirection(Vector3 direction)
     {
