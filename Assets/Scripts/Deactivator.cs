@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class Diactivater : MonoBehaviour
+public class Deactivator : MonoBehaviour
 {
     private Collider _collider;
 

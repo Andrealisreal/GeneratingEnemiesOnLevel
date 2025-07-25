@@ -683,6 +683,7 @@ GameObject:
   - component: {fileID: 1185949009}
   - component: {fileID: 1185949008}
   - component: {fileID: 1185949007}
+  - component: {fileID: 1185949010}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -726,8 +727,7 @@ MonoBehaviour:
   - {fileID: 374451652}
   - {fileID: 1951703066}
   - {fileID: 1456106574}
-  _spawnDelay: 5
-  _mover: {fileID: 6786972837589633176, guid: f8badaad0d24f664fa553a87cf5abc7a, type: 3}
+  _spawnDelay: 2
 --- !u!4 &1185949009
 Transform:
   m_ObjectHideFlags: 0
@@ -743,6 +743,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1185949010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185949006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c3c72237762834eb38a183d2ccbefa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 2
 --- !u!1 &1232384334
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +871,7 @@ GameObject:
   - component: {fileID: 1781073240}
   - component: {fileID: 1781073239}
   m_Layer: 0
-  m_Name: DiactivateObj
+  m_Name: Deactivator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
