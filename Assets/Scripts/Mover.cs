@@ -33,7 +33,7 @@ public class Mover : MonoBehaviour
     {
         transform.position += _speed * Time.deltaTime * _currentDirection;
     }
-
+    
     private IEnumerator Debuger()
     {
         Debug.Log("Корутина запустилась");
