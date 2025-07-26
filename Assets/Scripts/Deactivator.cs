@@ -11,4 +11,12 @@ public class Deactivator : MonoBehaviour
         
         _collider.isTrigger = true;
     }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent<Enemy>(out _) == false) 
+            return;
+        
+        other.gameObject.SetActive(false);
+    }
 }

@@ -22,17 +22,21 @@ public class EnemyPool : MonoBehaviour
             if (enemy.gameObject.activeInHierarchy == false)
             {
                 enemy.gameObject.SetActive(true);
+                enemy.ResetDefaults();
 
                 return enemy;
             }
         }
 
-        return CreateEnemy();
+        var newEnemy = CreateEnemy();
+        newEnemy.ResetDefaults();
+        
+        return newEnemy;
     }
 
     private Enemy CreateEnemy()
     {
-        Enemy enemy = Instantiate(_prefabEnemy);
+        var enemy = Instantiate(_prefabEnemy);
         enemy.gameObject.SetActive(false);
         _pool.Add(enemy);
 
@@ -41,7 +45,7 @@ public class EnemyPool : MonoBehaviour
 
     private IEnumerator CreatePool()
     {
-        for (int i = 0; i < _sizePool; i++)
+        for (var i = 0; i < _sizePool; i++)
         {
             CreateEnemy();
 
